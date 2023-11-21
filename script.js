@@ -73,7 +73,7 @@ function navBarAnimation() {
             trigger: "#footer",
             scroller: "#main",
             start: "top center",
-            markers: true,
+            //markers: true,
             end: "top -2%",
             scrub: 1
         }
