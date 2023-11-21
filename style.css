@@ -1,0 +1,622 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection{
+    color: #fff;
+    background-color: #000;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+#nav{
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+#nav-part1{
+    /* background-color: red; */
+    height: 100px;
+    overflow: hidden;
+}
+#nav-part1 svg{
+    display: block;
+}
+
+#nav-part1 svg:nth-child(1){
+    width: 100px;
+    height: 100px;
+}
+#nav-part1 svg:nth-child(2){
+    height: 80px;
+    width: 80px;
+}
+
+#nav #nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#nav-part2 #links a{
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-weight: 300;
+    margin-left: 5vw;
+    font-size: 16px;
+}
+
+#nav-part2 #links a:hover{
+    color: grey;
+}
+
+
+#links{
+    padding: 10px;
+}
+
+#icons{
+    padding: 13px 15px;
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+}
+
+#nav-part2 #icons i{
+    color: #333;
+    font-size: 19px;
+    margin: 0vw 1.8vw;
+    cursor: pointer;
+} 
+
+#nav-part2 #icons .cross-icon{
+    fill: black;
+    margin-top: 10px;
+    display: none;
+}
+
+#fullscreen-nav{
+    height: 0vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    margin-bottom: 2vw;
+    position: absolute;
+    z-index: 999;
+}
+
+
+#fullscreen-nav .col{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    gap: 0.2vw;
+    padding-bottom: 2vw;
+}
+
+#fullscreen-nav .col a{
+    color: white;
+    font-family: futura;
+    text-decoration: none;
+    font-size: 4vw;
+    line-height: 4vw;
+    letter-spacing: -1.5px;
+}
+
+#fullscreen-nav .col a i{
+    margin-left: -14px;
+    margin-right: -20px;
+}
+
+#fullscreen-nav .col a:hover{
+    color: grey;
+}
+
+#fullscreen-nav .col:nth-child(1){
+    justify-content: end;
+    align-items: flex-start;
+    padding-left: 2vw;
+}
+
+#fullscreen-nav .col h3{
+    color: grey;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 2.5vw;
+}
+
+#fullscreen-nav .col h4{
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+#fullscreen-nav .col h4:hover{
+    color: grey;
+}
+#cursor{
+    height: 350px;
+    width: 350px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%) scale(0);
+    /* transform: scale(0); */
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 0.2vw;
+    padding-top: 39.5vh;
+}
+
+#page1 h1{
+    font-size: 15.5vw;
+    font-family: futura;
+    text-transform: uppercase;
+    line-height: 13vw;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -5px;
+}
+
+#video-container{
+    height: 100vh;
+    width: 100%;
+    margin-top: 3vw;
+    padding: 0 1.5vw;
+    position: relative;
+}
+
+#video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#video-container #play{
+    padding: 2vw 1.5vw;
+    background-color: black;
+    color: #fff;
+    font-size: 1.1vw;
+    position: absolute;
+    border-radius: 50%;
+    font-family: futura;
+    opacity: 0;
+    scale: 0;
+}
+
+.divider{
+    padding: 8vw 1.8vw 1vw 1.8vw;
+}
+.divider1{
+    padding: 1vw 1.8vw 4vw 1.8vw;
+}
+
+.separator-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.separator-text h2{
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.separator{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vw 1.7vw;
+}
+
+#page2 .elem{
+    height: 100%;
+    width: 32.5%;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page2 .elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.2;
+}
+
+#page2 .elem .dets{
+    background-color: #e5f0d6;
+    height: 8vh;
+    border-radius: 50px;
+    width: 70%;
+    z-index: 9;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+#page2 .elem .dets .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#page2 .elem .dets h3{
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 490;
+    color: #2e2e2ef0;
+    letter-spacing: -0.1px;
+}
+
+#page2 .elem .dets .bold-text{
+    font-weight: 900;
+}
+
+#page2 .elem .dets .dot{
+    background-color: rgb(29, 29, 29);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+#page2 #elem2 .dets{
+    background-color: #f5dfcf;
+}
+
+
+
+#page3{
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    padding: 5vw 1.7vw 0vw 1.7vw;
+    font-family: "Futura Now Headline", "Lucida Sans";
+}
+#page3 .heading{
+    width: 60%;
+}
+
+#page3 .heading h1{
+    font-family: futura;
+    font-size: 4.5vw;
+    font-weight: 900;
+    line-height: 4.5vw;
+    letter-spacing: -1px;
+}
+
+#page3 .para{
+    width: 40%;
+    padding: 1vw 9vw 0vw 7vw;
+}
+
+#page3 .para p{
+    color: rgb(37, 37, 37);
+    font-size: 1.2vw;
+    font-weight: 400;
+    margin-bottom: 2.5vw;
+    line-height: 1.8vw;
+    letter-spacing: -1px;
+}
+
+#page4{
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#page4 .child{
+    height: 75vh;
+    width: 45vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 18vw;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+}
+
+#page4 .child img{
+    height: 100%;
+    margin-bottom: 5vw;
+}
+
+#page4 .child h3{
+  font-size: 0.9vw;
+  font-weight: 400;
+  line-height: 3vw;
+}
+
+#page5{
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 2vw;
+}
+
+#page5 #tabs-container{
+    white-space: nowrap;
+}
+
+#page5 #tabs-container .tabs{
+     display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 14%;
+    text-align: center;
+    margin: 0vw 2vw;
+}
+
+#page5 #tabs-container .tabs .radio{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-bottom: 3vw;
+}
+
+#page5 #tabs-container .tabs h2{
+    font-size: 30px;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -1px;
+    opacity: 0.7;
+}
+
+#page5 #tabs-container .tabs .radio:hover{
+    background-color: black;
+}
+#page5 #tabs-container .tabs:hover > .radio{
+    background-color: black;
+}
+
+#page5 #tabs-container .tabs:hover > h2{
+    opacity: 1;
+}
+
+#tabs-content-container{
+    width: 100%;
+    margin-top: 7vw;
+}
+
+#tabs-content-container .tabs-content{
+    font-family: futura;
+    font-size: 5vw;
+    line-height: 5vw;
+    letter-spacing: -1.2px;
+    text-align: center;
+    display: none;
+    padding: 0vw 13vw;
+}
+
+#page6{
+    min-height: 30vh;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 7vw 0vw;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+}
+
+#page6 button{
+    width: 26%;
+    background-color: black;
+    font-size: 1.1vw;
+    padding: 1.8vw;
+    color: white;
+    border-radius: 80px;
+    cursor: pointer;
+}
+#page6 button:hover{
+    color: grey;
+}
+#page6 h5{
+    margin-top: 2vw;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+footer{
+    height: 100vh;
+    display: flex;
+    padding: 5vw 1.2vw 0vw 1.2vw;
+}
+
+footer #col1{
+    width: 13%;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    
+}
+
+footer .h3{
+    font-size: 18px;
+    color: #9c9c9c;
+    margin-bottom: 2vw;
+}
+footer .h4{
+    font-size: 18px;
+    line-height: 25px;
+    color: #333;
+    cursor: pointer;
+}
+footer #col2{
+    width: 66%;
+    text-align: center;
+}
+
+footer #col2 svg{
+    fill: black;
+    width: 260px;
+    height: 260px;
+}
+
+footer #col2 .f-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    margin: 6vw 0vw;
+}
+
+footer #col2 .f-links h2{
+    color: #9c9c9c;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer #col2 p{
+    color: #333;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+footer #col3{
+    width: 13%;
+    text-align: end;
+    font-family: "Helvetica Now Text", "Lucida Sans", Tahoma, sans-serif;
+}
+
+@media (max-width: 600px){
+    #page1 h1{
+        font-size: 15.5vw;
+        line-height: 14vw;
+        letter-spacing: -3px;
+    }
+    #page1{
+        min-height: 76vh;
+        padding: 0 2vw;
+        padding-top: 25vh;
+    }
+    #video-container{
+        height: 30vh;
+        margin-top: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #video-container #play{
+        padding: 8vw 4vw;
+        font-size: 6.5vw;
+        opacity: 1;
+        scale: 1;
+    }
+
+    #page2{
+        min-height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        padding: 5vw 3vw;
+    }
+    
+    #page2 .elem{
+        height: 100vh;
+        width: 100%;
+        /* background-color: red; */
+        overflow: hidden;
+        margin-bottom: 3vw;
+    }
+
+    #page3{
+        min-height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 4vw 1.5vw 0vw 1.5vw;
+    }
+    #page3 .heading{
+        text-align: center;
+        width: 100%;
+    }
+    
+    #page3 .heading h1{
+        font-size: 6vw;
+        line-height: 7vw;
+        letter-spacing: -1px;
+    }
+    
+    #page3 .para{
+        text-align: center;
+        width: 100%;
+        padding: 7vw 0vw 0vw 0vw;
+    }
+    
+    #page3 .para p{
+        font-size: 3.5vw;
+        margin-bottom: 7vw;
+        line-height: 5vw;
+        letter-spacing: -1px;
+    }
+    
+    #nav-part1{
+        height: 90px;
+        width: 24%;
+    }
+
+    #nav-part1 svg:nth-child(1){
+        width: 90px;
+        height: 90px;
+    }
+    #nav-part1 svg:nth-child(2){
+        height: 70px;
+        width: 70px;
+    }
+
+    #nav-part2 #links a{
+        display: none;
+    }
+ 
+    #icons{
+        padding: 15px 15px;
+    }
+    #nav-part2 #icons i{
+        font-size: 28px;
+        margin: 0vw 5vw;
+    }     
+}
